@@ -50,7 +50,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
- DAC_HandleTypeDef hdac;
+DAC_HandleTypeDef hdac;
 
 TIM_HandleTypeDef htim6;
 
@@ -104,13 +104,13 @@ void handle_invalid_command() {
 
 
 void handle_command(char* command) {
-	if (command[0] == 'F' && command[4] == 'A') {
-		float f_val = (float)((command[1] - '0') * 100 + (command[2] - '0') * 10 + command[3] - '0');
-		float a_val = command[5] - '0' + (command[7] - '0') * 0.1;
-		if (a_val > VREF) {
-			a_val = VREF;
+	if (command[0] == FREQUENCY_SYMBOL && command[4] == AMPLITUDE_SYMBOL) {
+		f = (float)((command[1] - '0') * 100 + (command[2] - '0') * 10 + command[3] - '0');
+		amplitude = command[5] - '0' + (command[7] - '0') * 0.1;
+		if (amplitude > VREF) {
+			amplitude = VREF;
 		}
-		generate_sin(a_val, offs, f_val);
+		generate_sin(amplitude, offs, f);
 		HAL_UART_Transmit_IT(&huart2, (uint8_t *)SUCCESSFUL, strlen(SUCCESSFUL));
 	} else {
 		handle_invalid_command();
@@ -167,8 +167,8 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   generate_sin(amplitude, offs, f);
-  HAL_TIM_Base_Start_IT(&htim6);
 
+  HAL_TIM_Base_Start_IT(&htim6);
   HAL_UART_Receive_IT(&huart2, rxData, sizeof(rxData));
   HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
   /* USER CODE END 2 */
