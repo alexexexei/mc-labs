@@ -296,3 +296,69 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-10-30 23:38:42.776
 !MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/openstlinux/updatesite1.
+!SESSION 2024-11-07 08:29:48.686 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-07 08:30:07.531
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-07 08:30:07.625
+!MESSAGE Log4j initialized with config file C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-07 08:30:17.678
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-11-07 08:30:39.881
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-11-07 08:30:40.195
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/openstlinux/updatesite1.
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-07 08:40:04.534
+!MESSAGE Indexed 'Lab_3' (21 sources, 81 headers) in 3.34 sec: 4,508 declarations; 21,623 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0077%)
+!SESSION 2024-11-07 09:48:53.264 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-07 09:49:09.382
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-07 09:49:09.469
+!MESSAGE Log4j initialized with config file C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-07 09:49:16.304
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-11-07 09:49:37.895
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-11-07 09:49:38.612
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/openstlinux/updatesite1.
+!SESSION 2024-11-12 13:46:08.452 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-12 13:46:30.529
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-12 13:46:30.634
+!MESSAGE Log4j initialized with config file C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-12 13:46:41.851
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-11-12 13:47:03.759
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-11-12 13:47:04.131
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/openstlinux/updatesite1.
