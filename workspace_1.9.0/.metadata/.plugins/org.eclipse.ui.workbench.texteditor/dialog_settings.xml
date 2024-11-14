@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="UART_WaitOnFlagUntilTimeout"/>
+		<item key="selection" value="SAMPLE_RATE"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="sample_rate"/>
+			<item value="SAMPLE_RATE"/>
+			<item value="generate_sin"/>
+			<item value="sr"/>
+			<item value="HAL_TIM_PeriodElapsedCallback"/>
+			<item value="SIN_POINTS"/>
+			<item value="SIN_SAMPLE_POINTS"/>
+			<item value="channel"/>
+			<item value="TIM_HandleTypeDef"/>
 			<item value="UART_WaitOnFlagUntilTimeout"/>
 			<item value="Receive"/>
 			<item value="receive"/>
 			<item value="define"/>
 			<item value="size"/>
 			<item value="HAL_UART_Receive_IT(&amp;huart2, &amp;rxData, 1);"/>
-			<item value="main"/>
-			<item value="data"/>
-			<item value="rx"/>
 		</list>
 		<list key="replacehistory">
 		</list>

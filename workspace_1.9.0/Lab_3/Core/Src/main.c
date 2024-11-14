@@ -32,8 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define SINE_SAMPLE_POINTS 256
-#define SAMPLE_RATE 1000.0f
+#define SAMPLE_RATE 1000
 #define VREF 3.3f
 
 #define COMMAND_SIZE 8
@@ -58,7 +57,7 @@ TIM_HandleTypeDef htim6;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-uint16_t sine[SINE_SAMPLE_POINTS];
+uint16_t sine[SAMPLE_RATE];
 uint16_t sample_index = 0;
 float amplitude = 3.0f;
 float offs = 0.0f;
@@ -74,16 +73,16 @@ static void MX_DAC_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-void generate_sin(float ampl, float offset, float freq, float sample_rate);
+void generate_sin(float ampl, float offset, float freq);
 void handle_invalid_command();
 void handle_command(char* command);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void generate_sin(float ampl, float offset, float freq, float sample_rate) {
-	float omega = 2.0f * M_PI * freq / sample_rate;
-	for (int i = 0; i < SINE_SAMPLE_POINTS; i++) {
+void generate_sin(float ampl, float offset, float freq) {
+	float omega = 2.0f * M_PI * freq / SAMPLE_RATE * 2;
+	for (int i = 0; i < SAMPLE_RATE; i++) {
 		float value = offset + ampl * sinf(omega * i);
 		value = (value + ampl) / (2 * VREF);
 		sine[i] = (uint16_t)(value * 4095);
@@ -94,7 +93,7 @@ void generate_sin(float ampl, float offset, float freq, float sample_rate) {
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM6) {
 		HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, sine[sample_index]);
-		sample_index = (sample_index + 1) % SINE_SAMPLE_POINTS;
+		sample_index = (sample_index + 1) % SAMPLE_RATE;
 	}
 }
 
@@ -111,7 +110,7 @@ void handle_command(char* command) {
 		if (a_val > VREF) {
 			a_val = VREF;
 		}
-		generate_sin(a_val, 0, f_val, SAMPLE_RATE);
+		generate_sin(a_val, offs, f_val);
 		HAL_UART_Transmit_IT(&huart2, (uint8_t *)SUCCESSFUL, strlen(SUCCESSFUL));
 	} else {
 		handle_invalid_command();
@@ -167,7 +166,7 @@ int main(void)
   MX_TIM6_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  generate_sin(amplitude, offs, f, SAMPLE_RATE);
+  generate_sin(amplitude, offs, f);
   HAL_TIM_Base_Start_IT(&htim6);
 
   HAL_UART_Receive_IT(&huart2, rxData, sizeof(rxData));

@@ -4202,3 +4202,183 @@ arm-none-eabi-size   Lab_3.elf
   20624	     28	   2260	  22912	   5980	Lab_3.elf
 Finished building: default.size.stdout
  
+11:04:55 **** Incremental Build of configuration Debug for project Lab_1 ****
+make -j16 all 
+arm-none-eabi-size   Lab_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6756	     20	   1572	   8348	   209c	Lab_1.elf
+Finished building: default.size.stdout
+ 
+11:04:56 **** Incremental Build of configuration Debug for project Lab_2 ****
+make -j16 all 
+arm-none-eabi-size   Lab_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12376	     36	   1652	  14064	   36f0	Lab_2.elf
+Finished building: default.size.stdout
+ 
+11:04:56 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab_3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\Lab_3\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab_3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab_3.elf
+ 
+arm-none-eabi-size   Lab_3.elf 
+arm-none-eabi-objdump -h -S  Lab_3.elf  > "Lab_3.list"
+   text	   data	    bss	    dec	    hex	filename
+  20632	     28	   2260	  22920	   5988	Lab_3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab_3.list
+ 
+11:05:07 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-size   Lab_3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20632	     28	   2260	  22920	   5988	Lab_3.elf
+Finished building: default.size.stdout
+ 
+11:11:21 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-size   Lab_3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20632	     28	   2260	  22920	   5988	Lab_3.elf
+Finished building: default.size.stdout
+ 
+11:17:59 **** Incremental Build of configuration Debug for project Lab_1 ****
+make -j16 all 
+arm-none-eabi-size   Lab_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6756	     20	   1572	   8348	   209c	Lab_1.elf
+Finished building: default.size.stdout
+ 
+11:18:00 **** Incremental Build of configuration Debug for project Lab_2 ****
+make -j16 all 
+arm-none-eabi-size   Lab_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12376	     36	   1652	  14064	   36f0	Lab_2.elf
+Finished building: default.size.stdout
+ 
+11:18:00 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:60:10: error: size of array 'sine' has non-integer type
+   60 | uint16_t sine[SAMPLE_RATE];
+      |          ^~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:96:37: error: invalid operands to binary % (have 'int' and 'float')
+   96 |   sample_index = (sample_index + 1) % SAMPLE_RATE;
+      |                  ~~~~~~~~~~~~~~~~~~ ^
+      |                                |
+      |                                int
+../Core/Src/main.c: In function 'handle_command':
+../Core/Src/main.c:113:3: error: too many arguments to function 'generate_sin'
+  113 |   generate_sin(a_val, offs, f_val, SAMPLE_RATE);
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:83:6: note: declared here
+   83 | void generate_sin(float ampl, float offset, float freq) {
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:3: error: too many arguments to function 'generate_sin'
+  169 |   generate_sin(amplitude, offs, f, SAMPLE_RATE);
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:83:6: note: declared here
+   83 | void generate_sin(float ampl, float offset, float freq) {
+      |      ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:18:20 **** Incremental Build of configuration Debug for project Lab_1 ****
+make -j16 all 
+arm-none-eabi-size   Lab_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6756	     20	   1572	   8348	   209c	Lab_1.elf
+Finished building: default.size.stdout
+ 
+11:18:21 **** Incremental Build of configuration Debug for project Lab_2 ****
+make -j16 all 
+arm-none-eabi-size   Lab_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12376	     36	   1652	  14064	   36f0	Lab_2.elf
+Finished building: default.size.stdout
+ 
+11:18:21 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:3: error: too many arguments to function 'generate_sin'
+  169 |   generate_sin(amplitude, offs, f, SAMPLE_RATE);
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:83:6: note: declared here
+   83 | void generate_sin(float ampl, float offset, float freq) {
+      |      ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:19:00 **** Incremental Build of configuration Debug for project Lab_1 ****
+make -j16 all 
+arm-none-eabi-size   Lab_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6756	     20	   1572	   8348	   209c	Lab_1.elf
+Finished building: default.size.stdout
+ 
+11:19:00 **** Incremental Build of configuration Debug for project Lab_2 ****
+make -j16 all 
+arm-none-eabi-size   Lab_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12376	     36	   1652	  14064	   36f0	Lab_2.elf
+Finished building: default.size.stdout
+ 
+11:19:01 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab_3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\Lab_3\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab_3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab_3.elf
+ 
+arm-none-eabi-size   Lab_3.elf 
+arm-none-eabi-objdump -h -S  Lab_3.elf  > "Lab_3.list"
+   text	   data	    bss	    dec	    hex	filename
+  20628	     28	   3748	  24404	   5f54	Lab_3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab_3.list
+ 
+11:19:15 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-size   Lab_3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20628	     28	   3748	  24404	   5f54	Lab_3.elf
+Finished building: default.size.stdout
+ 
+11:21:18 **** Incremental Build of configuration Debug for project Lab_1 ****
+make -j16 all 
+arm-none-eabi-size   Lab_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6756	     20	   1572	   8348	   209c	Lab_1.elf
+Finished building: default.size.stdout
+ 
+11:21:18 **** Incremental Build of configuration Debug for project Lab_2 ****
+make -j16 all 
+arm-none-eabi-size   Lab_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12376	     36	   1652	  14064	   36f0	Lab_2.elf
+Finished building: default.size.stdout
+ 
+11:21:19 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab_3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\Lab_3\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab_3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab_3.elf
+ 
+arm-none-eabi-size   Lab_3.elf 
+arm-none-eabi-objdump -h -S  Lab_3.elf  > "Lab_3.list"
+   text	   data	    bss	    dec	    hex	filename
+  20644	     28	   3748	  24420	   5f64	Lab_3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab_3.list
+ 
+11:21:25 **** Incremental Build of configuration Debug for project Lab_3 ****
+make -j16 all 
+arm-none-eabi-size   Lab_3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20644	     28	   3748	  24420	   5f64	Lab_3.elf
+Finished building: default.size.stdout
+ 
