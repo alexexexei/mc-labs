@@ -94,7 +94,7 @@ void handle_command(char* command);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void generate_sin(float ampl, float offset, float freq) {
-	float omega = 2.0f * M_PI * freq / SAMPLE_RATE * 2;
+	float omega = 2.0f * M_PI * freq / SAMPLE_RATE;
 	for (int i = 0; i < SAMPLE_RATE; i++) {
 		float value = offset + ampl * sinf(omega * i);
 		value = (value + ampl) / (2 * VREF);
@@ -125,7 +125,7 @@ void handle_command(char* command) {
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
     if(hadc->Instance == ADC1) {
-    	adc_voltage = (2 * VREF) * adcData[0] / 4095.0 - amplitude;
+    	adc_voltage = VREF * adcData[0] / 4095.0;
     	if (HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adcData, ADC_BUFFER_SIZE) != HAL_OK) {
     		  Error_Handler();
     	}
@@ -194,6 +194,9 @@ int main(void)
   MX_ADC1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  if (amplitude > VREF) {
+  	  amplitude = VREF;
+  }
   generate_sin(amplitude, offs, f);
 
   HAL_TIM_Base_Start_IT(&htim6);
@@ -237,7 +240,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 10;
+  RCC_OscInitStruct.PLL.PLLM = 6;
   RCC_OscInitStruct.PLL.PLLN = 150;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
@@ -372,9 +375,9 @@ static void MX_TIM6_Init(void)
 
   /* USER CODE END TIM6_Init 1 */
   htim6.Instance = TIM6;
-  htim6.Init.Prescaler = 2;
+  htim6.Init.Prescaler = 74;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 49999;
+  htim6.Init.Period = 999;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -408,7 +411,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 100000;
+  huart2.Init.BaudRate = 900000;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
