@@ -1,4 +1,4 @@
-serialPort = serialport("COM10", 1000000);
+serialPort = serialport("COM7", 1000000);
 configureTerminator(serialPort, "CR/LF");
 
 numDataPoints = 1000;
