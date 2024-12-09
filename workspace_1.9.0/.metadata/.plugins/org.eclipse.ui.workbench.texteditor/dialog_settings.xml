@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="CH"/>
+		<item key="selection" value="int32_t"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="int32_t"/>
+			<item value="pwm"/>
+			<item value="pot2_control"/>
+			<item value="pot1_motor"/>
+			<item value="TIM_CHANNEL"/>
+			<item value="adcdata"/>
+			<item value="ADC"/>
+			<item value="adc1"/>
 			<item value="CH"/>
 			<item value="Prescaler"/>
 			<item value="adc_buffer"/>
@@ -15,16 +23,10 @@
 			<item value="sample_rate"/>
 			<item value="SAMPLE_RATE"/>
 			<item value="generate_sin"/>
-			<item value="sr"/>
-			<item value="HAL_TIM_PeriodElapsedCallback"/>
-			<item value="SIN_POINTS"/>
-			<item value="SIN_SAMPLE_POINTS"/>
-			<item value="channel"/>
-			<item value="TIM_HandleTypeDef"/>
-			<item value="UART_WaitOnFlagUntilTimeout"/>
-			<item value="Receive"/>
 		</list>
 		<list key="replacehistory">
+			<item value="pot_control"/>
+			<item value="pot_motor"/>
 			<item value="adcData"/>
 		</list>
 	</section>
