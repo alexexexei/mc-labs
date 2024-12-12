@@ -78,8 +78,8 @@ int16_t integral = 0;
 uint16_t output = 0;
 
 float Kp = 0.05;
-float Ki = 0.01;
-float Kd = 0.1;
+float Ki = 0.0001;
+float Kd = 0.01;
 
 struct msg {
 	int16_t header;

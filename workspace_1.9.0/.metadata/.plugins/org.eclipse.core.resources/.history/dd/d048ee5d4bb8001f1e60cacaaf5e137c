@@ -77,9 +77,9 @@ int16_t prev_error = 0;
 int16_t integral = 0;
 uint16_t output = 0;
 
-float Kp = 0.05;
-float Ki = 0.01;
-float Kd = 0.1;
+float Kp = 1.5;
+float Ki = 0.0001;
+float Kd = 0.01;
 
 struct msg {
 	int16_t header;
@@ -360,7 +360,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 900000;
+  huart2.Init.BaudRate = 100000;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -431,7 +431,7 @@ void send_telemetry() {
 	new_msg.out_val = output;
 	new_msg.terminator = 0xBBBB;
 
-	HAL_UART_Transmit(&huart2, (uint8_t*)&new_msg, sizeof(struct msg), HAL_MAX_DELAY);
+	HAL_UART_Transmit_IT(&huart2, (uint8_t*)&new_msg, sizeof(struct msg));
 }
 
 
