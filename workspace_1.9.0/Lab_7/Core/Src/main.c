@@ -57,7 +57,6 @@ UART_HandleTypeDef huart2;
 uint8_t uart_rx_data[10] = {'0'};
 uint8_t num_data[8] = {0};
 uint8_t spi_tx_data[2];
-uint8_t dma_active = 0;
 uint8_t current_digit = 0;
 uint8_t segment_digits[] = {
 	0b00111111, // 0
