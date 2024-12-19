@@ -1,21 +1,21 @@
-09:01:49 **** Incremental Build of configuration Debug for project Lab_5 ****
+09:21:27 **** Incremental Build of configuration Debug for project Lab_7 ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Lab_5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\Test\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab_5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Lab_5.elf
+arm-none-eabi-gcc -o "Lab_7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\alexe\STM32CubeIDE\workspace_1.9.0\Lab_7\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab_7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab_7.elf
  
-arm-none-eabi-size   Lab_5.elf 
-arm-none-eabi-objdump -h -S  Lab_5.elf  > "Lab_5.list"
+arm-none-eabi-size   Lab_7.elf 
+arm-none-eabi-objdump -h -S  Lab_7.elf  > "Lab_7.list"
    text	   data	    bss	    dec	    hex	filename
-  22216	     32	   1968	  24216	   5e98	Lab_5.elf
+  18268	     44	   1908	  20220	   4efc	Lab_7.elf
 Finished building: default.size.stdout
  
-Finished building: Lab_5.list
+Finished building: Lab_7.list
  
-09:01:56 **** Incremental Build of configuration Debug for project Lab_5 ****
+09:21:33 **** Incremental Build of configuration Debug for project Lab_7 ****
 make -j16 all 
-arm-none-eabi-size   Lab_5.elf 
+arm-none-eabi-size   Lab_7.elf 
    text	   data	    bss	    dec	    hex	filename
-  22216	     32	   1968	  24216	   5e98	Lab_5.elf
+  18268	     44	   1908	  20220	   4efc	Lab_7.elf
 Finished building: default.size.stdout
  

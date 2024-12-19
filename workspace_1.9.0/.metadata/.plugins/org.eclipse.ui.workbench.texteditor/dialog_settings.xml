@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="int32_t"/>
+		<item key="selection" value="uart_rx_data"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="rxData"/>
+			<item value="rx_data"/>
+			<item value="seven_segment_digits"/>
 			<item value="int32_t"/>
 			<item value="pwm"/>
 			<item value="pot2_control"/>
@@ -20,11 +23,9 @@
 			<item value="Prescaler"/>
 			<item value="adc_buffer"/>
 			<item value="Lab_4"/>
-			<item value="sample_rate"/>
-			<item value="SAMPLE_RATE"/>
-			<item value="generate_sin"/>
 		</list>
 		<list key="replacehistory">
+			<item value="uart_rx_data"/>
 			<item value="pot_control"/>
 			<item value="pot_motor"/>
 			<item value="adcData"/>
