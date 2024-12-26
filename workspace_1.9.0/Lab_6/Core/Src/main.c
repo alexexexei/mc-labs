@@ -448,12 +448,12 @@ static void MX_GPIO_Init(void)
 void send_telemetry() {
 	struct msg new_msg;
 
-	new_msg.header = 0xAAAA;
+	new_msg.header = MSG_HEADER;
 	new_msg.curr_v = current_speed;
 	new_msg.tgt_v = target_speed;
 	new_msg.out_val = pid_output;
 	new_msg.err_val = error;
-	new_msg.terminator = 0xBBBB;
+	new_msg.terminator = MSG_TERMINATOR;
 
 	HAL_UART_Transmit_IT(&huart2, (uint8_t*)&new_msg, sizeof(struct msg));
 }

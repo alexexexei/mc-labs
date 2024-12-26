@@ -1212,7 +1212,7 @@ void send_telemetry() {
  80009d4:	af00      	add	r7, sp, #0
 	struct msg new_msg;
 
-	new_msg.header = 0xAAAA;
+	new_msg.header = MSG_HEADER;
  80009d6:	f64a 23aa 	movw	r3, #43690	; 0xaaaa
  80009da:	80bb      	strh	r3, [r7, #4]
 	new_msg.curr_v = current_speed;
@@ -1234,7 +1234,7 @@ void send_telemetry() {
  80009f6:	681b      	ldr	r3, [r3, #0]
  80009f8:	b21b      	sxth	r3, r3
  80009fa:	817b      	strh	r3, [r7, #10]
-	new_msg.terminator = 0xBBBB;
+	new_msg.terminator = MSG_TERMINATOR;
  80009fc:	f64b 33bb 	movw	r3, #48059	; 0xbbbb
  8000a00:	81fb      	strh	r3, [r7, #14]
 
