@@ -1,6 +1,7 @@
 error
 prev_error
 integral
-output
-pot_motor
-pot_control
+pid_output
+derivative
+target_speed
+current_speed

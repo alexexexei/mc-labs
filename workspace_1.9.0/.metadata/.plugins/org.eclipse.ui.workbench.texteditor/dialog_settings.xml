@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="uart_rx_data"/>
+		<item key="selection" value="fff"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="fff"/>
+			<item value="ffff"/>
+			<item value="adc"/>
+			<item value="spi_tx_data"/>
+			<item value="uart_rx_data"/>
 			<item value="rxData"/>
 			<item value="rx_data"/>
 			<item value="seven_segment_digits"/>
@@ -18,11 +23,6 @@
 			<item value="TIM_CHANNEL"/>
 			<item value="adcdata"/>
 			<item value="ADC"/>
-			<item value="adc1"/>
-			<item value="CH"/>
-			<item value="Prescaler"/>
-			<item value="adc_buffer"/>
-			<item value="Lab_4"/>
 		</list>
 		<list key="replacehistory">
 			<item value="uart_rx_data"/>
